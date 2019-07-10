@@ -8,6 +8,9 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.commands.registerCommand('vs-memes.start', () => {
             startMemes ();
         }),
+        vscode.commands.registerCommand('vs-memes.show', () => {
+            showMeme ();
+        }),
         vscode.commands.registerCommand('vs-memes.stop', () => {
             stopMemes ();
         })
@@ -17,13 +20,7 @@ export function activate(context: vscode.ExtensionContext) {
 function startMemes () {
     const ms = 5 * 60 * 1000;
     interval = setInterval(() => {
-        const panel = vscode.window.createWebviewPanel(
-            'vsmeme',
-            'Random Meme',
-            vscode.ViewColumn.One,
-            {}
-        );
-        fetchRandomMeme (panel);
+        showMeme();
     }, ms);
 }
 
@@ -31,6 +28,16 @@ function stopMemes () {
     if (interval) {
         clearTimeout(interval);
     }
+}
+
+function showMeme () {
+    const panel = vscode.window.createWebviewPanel(
+        'vsmeme',
+        'Random Meme',
+        vscode.ViewColumn.One,
+        {}
+    );
+    fetchRandomMeme (panel);
 }
 
 function fetchRandomMeme (panel: vscode.WebviewPanel) {

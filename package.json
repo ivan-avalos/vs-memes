@@ -3,6 +3,8 @@
 	"description": "Random Memes Each Five Minutes",
 	"version": "0.0.1",
 	"publisher": "avalos",
+	"repository": "https://github.com/ivan-avalos/vs-memes",
+	"license": "General Public License v3",
 	"engines": {
 		"vscode": "^1.32.0"
 	},
@@ -18,6 +20,11 @@
 			{
 				"command": "vs-memes.start",
 				"title": "Start VS-memes session",
+				"category": "Memes"
+			},
+			{
+				"command": "vs-memes.show",
+				"title": "Show random meme",
 				"category": "Memes"
 			},
 			{

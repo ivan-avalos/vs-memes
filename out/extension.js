@@ -6,6 +6,8 @@ var interval;
 function activate(context) {
     context.subscriptions.push(vscode.commands.registerCommand('vs-memes.start', () => {
         startMemes();
+    }), vscode.commands.registerCommand('vs-memes.show', () => {
+        showMeme();
     }), vscode.commands.registerCommand('vs-memes.stop', () => {
         stopMemes();
     }));
@@ -14,14 +16,17 @@ exports.activate = activate;
 function startMemes() {
     const ms = 5 * 60 * 1000;
     interval = setInterval(() => {
-        const panel = vscode.window.createWebviewPanel('vsmeme', 'Random Meme', vscode.ViewColumn.One, {});
-        fetchRandomMeme(panel);
+        showMeme();
     }, ms);
 }
 function stopMemes() {
     if (interval) {
         clearTimeout(interval);
     }
+}
+function showMeme() {
+    const panel = vscode.window.createWebviewPanel('vsmeme', 'Random Meme', vscode.ViewColumn.One, {});
+    fetchRandomMeme(panel);
 }
 function fetchRandomMeme(panel) {
     const url = "https://meme-api.herokuapp.com/";
