@@ -1,7 +1,7 @@
 {
 	"name": "vs-memes",
 	"description": "Random Memes Each Five Minutes",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"publisher": "avalos",
 	"repository": "https://github.com/ivan-avalos/vs-memes",
 	"license": "General Public License v3",
