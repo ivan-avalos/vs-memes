@@ -5,7 +5,7 @@
 	"publisher": "avalos",
 	"repository": "https://github.com/ivan-avalos/vs-memes",
 	"license": "GPL-3.0-or-later",
-	"icon": "https://i.imgur.com/JJUx5yM.png",
+	"icon": "icon.png",
 	"engines": {
 		"vscode": "^1.32.0"
 	},
